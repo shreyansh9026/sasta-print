@@ -13,9 +13,10 @@
             </div>
         <?php endif; ?>
         <form action="<?= BASE_URL ?>/register" method="POST">
+            <?= CsrfMiddleware::field() ?>
             <div class="form-group">
                 <label class="form-label">Full Name</label>
-                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                <input type="text" name="name" class="form-control" placeholder="John Doe" required minlength="2">
             </div>
             <div class="form-group">
                 <label class="form-label">Email Address</label>
@@ -23,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                <input type="password" name="password" class="form-control" placeholder="Min. 8 characters" required minlength="8">
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%; font-size:1rem; padding:0.875rem;">Sign Up <i class='bx bx-user-check'></i></button>
         </form>

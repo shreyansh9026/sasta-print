@@ -13,6 +13,7 @@
             </div>
         <?php endif; ?>
         <form action="<?= BASE_URL ?>/login" method="POST">
+            <?= CsrfMiddleware::field() ?>
             <div class="form-group">
                 <label class="form-label">Email Address</label>
                 <input type="email" name="email" class="form-control" placeholder="you@example.com" required>

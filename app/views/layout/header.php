@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional printing services online. High-quality prints delivered fast.">
+    <meta name="description" content="<?= htmlspecialchars($description ?? 'Professional printing services online. High-quality prints delivered fast across India.') ?>">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="<?= htmlspecialchars($title ?? APP_NAME) ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($description ?? 'Custom prints delivered fast.') ?>">
+    <meta property="og:type" content="website">
     <title><?= htmlspecialchars($title ?? APP_NAME) ?></title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"<?= APP_NAME ?>","description":"Professional online printing services","url":"<?= BASE_URL ?>"}</script>
 </head>
 <body>
     <header class="navbar" id="navbar">

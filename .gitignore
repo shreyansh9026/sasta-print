@@ -1,0 +1,24 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Dependencies
+/vendor/
+
+# Storage (user uploads, logs, cache, invoices)
+/storage/logs/
+/storage/cache/
+/storage/uploads/
+/storage/invoices/
+/storage/rate_limits/
+
+# IDE / OS
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# PHP
+*.log
+composer.lock
