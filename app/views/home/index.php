@@ -1,4 +1,4 @@
-<section class="hero animate-fade-up">
+<section class="hero animate-fade-up" style="background-image: url('https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&q=80&w=1920');">
     <div class="container" style="position: relative; z-index: 2;">
         <h1>Bring Your <span class="highlight">Ideas to Life</span></h1>
         <p>Premium quality printing for business cards, banners, and promotional materials. Fast, reliable, and brilliantly simple.</p>
@@ -12,8 +12,8 @@
 <section class="products-section container animate-fade-up delay-100">
     <div style="text-align:center; margin-bottom: 3.5rem;">
         <span class="badge badge-primary" style="margin-bottom:1rem;"><i class='bx bxs-star'></i> Trending Now</span>
-        <h2 class="section-title">Popular Products</h2>
-        <p class="section-subtitle">Discover our highest-rated templates and custom print solutions.</p>
+        <h2 class="section-title">Tackle Your Project with First-Rate Printing</h2>
+        <p class="section-subtitle">Custom-Fit Solutions for your business needs. Discover our highest-rated templates and premium print services.</p>
     </div>
     
     <div class="grid">
@@ -48,28 +48,37 @@
 <section id="features" style="background: var(--surface); padding: 6rem 0; margin-top:4rem; border-top:1px solid var(--border-color);" class="animate-fade-up delay-200">
     <div class="container" style="text-align:center;">
         <span class="badge badge-success" style="margin-bottom:1rem;"><i class='bx bx-check-shield'></i> Satisfaction Guaranteed</span>
-        <h2 class="section-title" style="margin-bottom: 3.5rem;">Why Choose <?= APP_NAME ?>?</h2>
-        <div class="grid" style="gap:3rem;">
-            <div style="padding:2rem; border-radius:var(--radius-lg); background:var(--bg-color); transition:var(--transition-spring);">
-                <div style="width:64px; height:64px; background:var(--gradient-primary); border-radius:var(--radius-full); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:white; font-size:2rem; box-shadow:var(--shadow-glow);">
-                    <i class='bx bx-rocket'></i>
-                </div>
-                <h3 style="margin-bottom:1rem; font-family:'Outfit',sans-serif; color:var(--text-primary);">Fast Delivery</h3>
-                <p style="color:var(--text-secondary);">Get your customized prints safely delivered to your doorstep in record time.</p>
+        <h2 class="section-title" style="margin-bottom: 3.5rem;">Founded with Excellence in Mind</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 4rem; text-align: left; align-items: center;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000" alt="Excellence in printing" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); width: 100%;">
             </div>
-            <div style="padding:2rem; border-radius:var(--radius-lg); background:var(--bg-color); transition:var(--transition-spring);">
-                <div style="width:64px; height:64px; background:var(--gradient-glow); border-radius:var(--radius-full); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:white; font-size:2rem;">
-                    <i class='bx bx-diamond'></i>
+            
+            <div style="flex: 1; min-width: 300px;">
+                <div style="margin-bottom: 2rem;">
+                    <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <div style="width:40px; height:40px; background:var(--primary-light); color:white; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-size:1.5rem;"><i class='bx bx-rocket'></i></div>
+                        <h3 style="font-family:'Outfit',sans-serif; color:var(--text-primary); margin:0;">Fast Delivery</h3>
+                    </div>
+                    <p style="color:var(--text-secondary); margin-left: calc(40px + 1rem);">Get your customized prints safely delivered to your doorstep in record time.</p>
                 </div>
-                <h3 style="margin-bottom:1rem; font-family:'Outfit',sans-serif; color:var(--text-primary);">Premium Quality</h3>
-                <p style="color:var(--text-secondary);">We exclusively use industry-leading materials for the best, most durable results.</p>
-            </div>
-            <div style="padding:2rem; border-radius:var(--radius-lg); background:var(--bg-color); transition:var(--transition-spring);">
-                <div style="width:64px; height:64px; background:linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius:var(--radius-full); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:white; font-size:2rem;">
-                    <i class='bx bx-palette'></i>
+                
+                <div style="margin-bottom: 2rem;">
+                    <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <div style="width:40px; height:40px; background:var(--primary); color:white; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-size:1.5rem;"><i class='bx bx-diamond'></i></div>
+                        <h3 style="font-family:'Outfit',sans-serif; color:var(--text-primary); margin:0;">Premium Quality</h3>
+                    </div>
+                    <p style="color:var(--text-secondary); margin-left: calc(40px + 1rem);">We exclusively use industry-leading materials for the best, most durable results.</p>
                 </div>
-                <h3 style="margin-bottom:1rem; font-family:'Outfit',sans-serif; color:var(--text-primary);">Interactive Design</h3>
-                <p style="color:var(--text-secondary);">Customize your templates instantly using our powerful browser design tools.</p>
+                
+                <div>
+                    <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <div style="width:40px; height:40px; background:var(--accent); color:white; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-size:1.5rem;"><i class='bx bx-palette'></i></div>
+                        <h3 style="font-family:'Outfit',sans-serif; color:var(--text-primary); margin:0;">Interactive Design</h3>
+                    </div>
+                    <p style="color:var(--text-secondary); margin-left: calc(40px + 1rem);">Customize your templates instantly using our powerful browser design tools.</p>
+                </div>
             </div>
         </div>
     </div>

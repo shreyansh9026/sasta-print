@@ -5,7 +5,7 @@
                 <div class="footer-brand">
                     <h3><i class='bx bxs-printer'></i> <?= APP_NAME ?></h3>
                     <p style="opacity:0.8; line-height:1.6; max-width:280px;">
-                        High-quality professional print solutions for your business. Fast, reliable, and beautifully crafted.
+                        Full-service printing solutions tailored for your business. Reliable, professional, and built with excellence in mind.
                     </p>
                     <div style="display:flex; gap:1rem; margin-top:1.5rem; font-size:1.5rem;">
                         <a href="#" style="color:#94a3b8; transition:color 0.2s;"><i class='bx bxl-facebook-circle'></i></a>

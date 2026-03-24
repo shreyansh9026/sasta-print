@@ -1,8 +1,11 @@
 <?php
+// ** LIVE SERVER SETTINGS **
+// REPLACE THESE WHEN UPLOADING TO YOUR HOSTING
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
+define('DB_USER', 'root'); 
 define('DB_PASS', '');
 define('DB_NAME', 'print_service');
-// Update BASE_URL based on your local server path. For example:
+
+// BASE URL for local environment
 define('BASE_URL', 'http://localhost/sasta%20print/public');
 define('APP_NAME', 'SastaPrint');

@@ -73,10 +73,10 @@ INSERT INTO categories (name, slug, description) VALUES
 ('Stickers', 'stickers', 'Custom die-cut stickers.');
 
 INSERT INTO products (category_id, name, slug, description, base_price, image_url) VALUES 
-(1, 'Standard Business Card', 'standard-business-card', 'Premium standard size business card.', 9.99, 'https://images.unsplash.com/photo-1589330691236-0925af166bac?auto=format&fit=crop&q=80&w=500'),
-(2, 'Vinyl Banner', 'vinyl-banner', 'Durable outdoor vinyl banner.', 25.00, 'https://images.unsplash.com/photo-1542385150-1849a37c945b?auto=format&fit=crop&q=80&w=500'),
-(3, 'Campaign Yard Sign', 'campaign-yard-sign', 'Perfect for election or real estate.', 15.00, 'https://images.unsplash.com/photo-1596707328221-39578051a89c?auto=format&fit=crop&q=80&w=500'),
-(4, 'Die Cut Stickers', 'die-cut-stickers', 'Custom shape vinyl stickers.', 5.00, 'https://images.unsplash.com/photo-1583008064434-315ae4883ef5?auto=format&fit=crop&q=80&w=500');
+(1, 'Standard Business Card', 'standard-business-card', 'Premium standard size business card.', 9.99, 'https://asset.gecdesigns.com/img/visiting-card-templates/sleek-and-modern-business-card-template-for-professionals-1680966557025-cover.webp'),
+(2, 'Vinyl Banner', 'vinyl-banner', 'Durable outdoor vinyl banner.', 25.00, 'https://maagsdesigns.com/cdn/shop/files/productimg-maagsdesings-114.png?v=1750541560'),
+(3, 'Campaign Yard Sign', 'campaign-yard-sign', 'Perfect for election or real estate.', 15.00, 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/4548de199900439.6659239029572.jpg'),
+(4, 'Die Cut Stickers', 'die-cut-stickers', 'Custom shape vinyl stickers.', 5.00, 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?q=80&w=1920&auto=format&fit=crop');
 
 INSERT INTO product_attributes (product_id, attribute_type, attribute_value, price_modifier) VALUES 
 (1, 'material', 'Matte', 0.00),

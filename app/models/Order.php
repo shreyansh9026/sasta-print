@@ -16,13 +16,17 @@ class Order {
             $stmtItem = $this->db->prepare("INSERT INTO order_items (order_id, product_id, quantity, size, material, design_data, price) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
             foreach ($items as $item) {
+                $design_data = isset($item['design_data']) && $item['design_data'] !== null 
+                               ? (is_array($item['design_data']) || is_object($item['design_data']) ? json_encode($item['design_data']) : $item['design_data'])
+                               : null;
+                               
                 $stmtItem->execute([
                     $order_id,
                     $item['product_id'],
                     $item['quantity'],
                     $item['size'] ?? null,
                     $item['material'] ?? null,
-                    $item['design_data'] ?? null,
+                    $design_data,
                     $item['price']
                 ]);
             }
