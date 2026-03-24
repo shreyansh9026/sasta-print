@@ -28,7 +28,7 @@ class ProductController extends Controller {
                 return;
             }
             $attributes = $productModel->getAttributes((int)$product['id']);
-            $reviews    = (new Review())->getByProduct((int)$product['id']);
+            $reviews    = (new Review())->getForProduct((int)$product['id']);
             
             $data = [
                 'product'    => $product,

@@ -35,7 +35,13 @@ class UserController extends Controller {
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_role'] = $user['role'];
             Logger::info('User logged in', ['user_id' => $user['id'], 'email' => $email]);
-            $this->redirect('/dashboard');
+            
+            // Smart redirection based on role
+            if ($user['role'] === 'admin') {
+                $this->redirect('/admin');
+            } else {
+                $this->redirect('/dashboard');
+            }
         } else {
             Logger::security('Failed login attempt', ['email' => $email]);
             $this->flash('error', 'Invalid email or password.');

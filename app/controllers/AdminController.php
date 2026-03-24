@@ -125,9 +125,75 @@ class AdminController extends Controller {
     public function deleteProduct(string $id): void {
         AuthMiddleware::requireAdmin();
         $productModel = new Product();
-        $productModel->delete((int)$id);
-        Cache::forget('api_products');
-        $this->json(['success' => true]);
+        if ($productModel->delete((int)$id)) {
+            $this->json(['success' => true]);
+        }
+        $this->json(['error' => 'Delete failed'], 500);
+    }
+
+    public function editProduct(string $id): void {
+        AuthMiddleware::requireAdmin();
+        $productModel = new Product();
+        $product = $productModel->getById((int)$id);
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $v = new Validator($_POST);
+            $v->required('name')->required('category_id')->numeric('base_price');
+            
+            if ($v->passes()) {
+                $data = $v->all();
+                $data['slug'] = $productModel->makeSlug($data['name'], (int)$id);
+                $productModel->update((int)$id, $data);
+                
+                // Handle Attributes
+                $attrs = [];
+                if (!empty($_POST['attr_type'])) {
+                    foreach ($_POST['attr_type'] as $idx => $type) {
+                        if (!empty($_POST['attr_value'][$idx])) {
+                            $attrs[] = [
+                                'type'  => $type,
+                                'value' => $_POST['attr_value'][$idx],
+                                'price' => (float)($_POST['attr_price'][$idx] ?? 0)
+                            ];
+                        }
+                    }
+                }
+                $productModel->setAttributes((int)$id, $attrs);
+                
+                $this->flash('success', 'Product updated successfully.');
+                $this->redirect('/admin/products');
+            }
+        }
+        
+        $this->view('admin/product_edit', [
+            'title'      => 'Edit Product: ' . ($product['name'] ?? 'Unknown'),
+            'product'    => $product,
+            'categories' => $productModel->getCategories(),
+            'attributes' => $productModel->getAttributes((int)$id),
+            'error'      => $this->getFlash('error')
+        ]);
+    }
+
+    // ── Categories ────────────────────────────────────────────────────────────
+    public function categories(): void {
+        AuthMiddleware::requireAdmin();
+        $productModel = new Product();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['add'])) {
+                $productModel->createCategory($_POST['name']);
+            } elseif (isset($_POST['edit'])) {
+                $productModel->updateCategory((int)$_POST['id'], $_POST['name']);
+            } elseif (isset($_POST['delete'])) {
+                $productModel->deleteCategory((int)$_POST['id']);
+            }
+            $this->redirect('/admin/categories');
+        }
+        
+        $this->view('admin/categories', [
+            'title'      => 'Manage Categories',
+            'categories' => $productModel->getCategories()
+        ]);
     }
 
     // ── Coupons ───────────────────────────────────────────────────────────────

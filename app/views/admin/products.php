@@ -58,8 +58,8 @@
                         <td><span class="badge badge-success">Active</span></td>
                         <td style="text-align:right;">
                             <div style="display:flex;gap:0.5rem;justify-content:flex-end;">
-                                <button class="btn btn-outline" style="padding:0.4rem;font-size:1.1rem;width:36px;height:36px;" title="Edit Product"><i class='bx bx-edit-alt'></i></button>
-                                <button onclick="deleteProduct(<?= $product['id'] ?>)" class="btn btn-outline" style="padding:0.4rem;font-size:1.1rem;width:36px;height:36px;border-color:var(--danger);color:var(--danger) !important;" title="Delete Product"><i class='bx bx-trash'></i></button>
+                                <a href="<?= BASE_URL ?>/admin/products/edit/<?= $product['id'] ?>" class="btn btn-outline" style="padding:0.4rem;font-size:1.1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Edit Product"><i class='bx bx-edit-alt'></i></a>
+                                <button onclick="deleteProduct(<?= $product['id'] ?>)" class="btn btn-outline" style="padding:0.4rem;font-size:1.1rem;width:36px;height:36px;border-color:var(--danger);color:var(--danger) !important;display:flex;align-items:center;justify-content:center;" title="Delete Product"><i class='bx bx-trash'></i></button>
                             </div>
                         </td>
                     </tr>

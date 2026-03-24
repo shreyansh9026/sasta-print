@@ -64,3 +64,8 @@ ALTER TABLE products ADD INDEX IF NOT EXISTS idx_category (category_id);
 INSERT IGNORE INTO coupons (code, type, value, usage_limit, expiry_date, min_order_amount) VALUES
 ('WELCOME10', 'percent', 10.00, 0, NULL, 0.00),
 ('FLAT50',    'flat',    50.00, 100, '2026-12-31', 200.00);
+
+-- Ensure Admin Account Exists
+-- default password: "password"
+INSERT IGNORE INTO users (name, email, password, role) VALUES
+('Admin', 'admin@sastaprint.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');

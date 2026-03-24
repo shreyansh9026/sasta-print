@@ -38,12 +38,12 @@ class Review {
 
     /** Admin: get pending reviews */
     public function getPending(): array {
-        $stmt = $this->db->query(
+        $res = $this->db->query(
             "SELECT r.*, u.name as user_name, p.name as product_name
              FROM reviews r JOIN users u ON u.id = r.user_id JOIN products p ON p.id = r.product_id
              WHERE r.is_approved = 0 ORDER BY r.created_at DESC"
         );
-        return $stmt->fetchAll();
+        return $res ? $res->fetchAll() : [];
     }
 
     public function approve(int $id): bool {
